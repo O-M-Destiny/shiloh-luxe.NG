@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../index.css";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const Booking = () => {
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ const Booking = () => {
     setDate("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/bookings", {
+      const response = await fetch(`${API}/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

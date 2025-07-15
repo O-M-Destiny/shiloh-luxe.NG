@@ -3,6 +3,9 @@ import { useAuth } from '../../AuthContext';
 import './AdminDashboard.css'; // ✅ Make sure this path matches where your CSS is
 import { useNavigate } from 'react-router-dom';
 
+const API = import.meta.env.VITE_API_BASE_URL;
+
+
 const AdminDashboard = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,9 +15,8 @@ const AdminDashboard = () => {
 
   const fetchBookings = async () => {
     const token = localStorage.getItem("access_token");
-
     try {
-      const response = await fetch("http://127.0.0.1:8000/admin/All_bookings", {
+      const response = await fetch(`${API}/All_bookings`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +51,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`http://127.0.0.1:8000/admin/status_update/${id}`, {
+    const response = await fetch(`${API}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +83,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`http://127.0.0.1:8000/admin/Delete_Booking/${id}`, {
+    const response = await fetch(`${API}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
