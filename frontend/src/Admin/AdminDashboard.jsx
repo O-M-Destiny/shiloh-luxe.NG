@@ -51,7 +51,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`${API}/admin/${id}`, {
+    const response = await fetch(`${API}/admin/status_update/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`${API}/admin/${id}`, {
+    const response = await fetch(`${API}/admin/Delete_Booking/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
