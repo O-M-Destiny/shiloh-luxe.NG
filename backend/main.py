@@ -16,7 +16,7 @@ app = FastAPI(
     description="This is the backend for the website"
 )
 
-origins = ["http://localhost:5174", "http://localhost:5173"]
+origins = ["https://shiloh-luxe.vercel.app", "http://localhost:5173"]
 
 app.add_middleware(
     CORSMiddleware,
