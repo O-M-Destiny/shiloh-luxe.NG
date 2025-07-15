@@ -16,7 +16,7 @@ const AdminDashboard = () => {
   const fetchBookings = async () => {
     const token = localStorage.getItem("access_token");
     try {
-      const response = await fetch(`${API}/All_bookings`, {
+      const response = await fetch(`${API}/admin/All_bookings`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`${API}/${id}`, {
+    const response = await fetch(`${API}/admin/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
   setAppointments(updatedAppointments);
 
   try {
-    const response = await fetch(`${API}/${id}`, {
+    const response = await fetch(`${API}/admin/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
