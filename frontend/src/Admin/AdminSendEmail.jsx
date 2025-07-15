@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import "../index.css"; // or a separate SendEmail.css if preferred
+import "../index.css";
 import { useState } from "react";
 import { useAuth } from "../../AuthContext";
-
+const API = import.meta.env.VITE_API_BASE_URL;
 
 const AdminSendEmail = () => {
   const { id } = useParams();
@@ -20,7 +20,7 @@ const AdminSendEmail = () => {
     setFeedback(null);
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/admin/email/${id}`, {
+      const response = await fetch(`${API}/admin/email/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

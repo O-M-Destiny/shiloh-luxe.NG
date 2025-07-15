@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext';
 
+const API = import.meta.env.VITE_API_BASE_URL;
+
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +14,7 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:8000/admin/login", {
+      const response = await fetch(`${API}/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
