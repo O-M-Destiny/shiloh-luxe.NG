@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../AuthContext';
-import './AdminDashBoard.css' // ✅ Make sure this path matches where your CSS is
+import './AdminDashBoard.css'
 import { useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_API_BASE_URL;
