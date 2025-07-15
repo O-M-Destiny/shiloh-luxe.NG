@@ -1,0 +1,76 @@
+.dashboard-container {
+  padding: 40px 20px 20px 20px; /* Less bottom padding */
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  margin-bottom: 0; /* ✅ remove excess bottom space */
+  padding-bottom: 10px; /* optional */
+}
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+.booking-card h3 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.booking-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.status {
+  margin-top: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: capitalize;
+  width: fit-content;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.confirmed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.email-btn {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: rgb(239, 103, 103);
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+}
